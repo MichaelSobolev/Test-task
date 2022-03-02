@@ -92,7 +92,7 @@ template.innerHTML = `
   </section>
 `;
 
-class OrganizationInputHints extends HTMLElement {
+class InputHintsOrganizations extends HTMLElement {
   #url
   #token
   #options
