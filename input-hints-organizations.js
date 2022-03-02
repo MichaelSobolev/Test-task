@@ -144,7 +144,6 @@ class InputHintsOrganizations extends HTMLElement {
 
   resetVariants() {
     // clear hintsContainer
-    console.log('reset');
     this.searchOptions = []
     this.hintsContainer.innerHTML = ""
     this.hintsContainer.style.display = 'none';
@@ -152,7 +151,6 @@ class InputHintsOrganizations extends HTMLElement {
 
   fillTheFields(data) {
     // Fill fields with data
-    console.log('fillTheFields');
     this.resetVariants()
     data = data.suggestions[0].data
     this.queryInput.value = data.name.short_with_opf
@@ -189,10 +187,8 @@ class InputHintsOrganizations extends HTMLElement {
       // In other cases provide user with search hints
       let data = await that.getCompaniesInfo(this.value)
       if (event.key === 'Enter' && this.value.length > 0) {
-        console.log('Enter');
         that.fillTheFields(data)
       } else if (this.value.length > 1) {
-        console.log('Anykey');
         that.showVariants(data)
       }
     })
